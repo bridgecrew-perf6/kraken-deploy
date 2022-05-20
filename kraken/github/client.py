@@ -66,7 +66,7 @@ class GithubClient:
 
         params = {"page": str(page)}
         if branch:
-            params["branch"] = branch
+            params["sha"] = branch
 
         data = self._request("GET", f"/repos/{self.repo}/commits", params=params)
 
