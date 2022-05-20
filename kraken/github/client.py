@@ -90,7 +90,7 @@ class GithubClient:
         self._request(
             "POST",
             f"/repos/{self.repo}/deployments",
-            data={"environment": environment, "ref": commit, "auto_merge": "false"},
+            data={"environment": environment, "ref": commit, "auto_merge": False},
         )
 
     def get_check_runs(self, *, ref: str) -> list[CheckRun]:
